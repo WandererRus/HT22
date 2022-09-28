@@ -47,15 +47,15 @@
                     indexIMinValue = temp;
                     temp = indexJMaxValue;
                     indexJMaxValue = indexJMinValue;
-                    indexJMinValue = temp;
-                    if ((indexIMaxValue == indexIMinValue && indexJMaxValue - indexJMinValue == 1)
-                        || (indexIMaxValue - indexIMinValue == 1 && indexJMinValue == 3 && indexJMaxValue == 0))
-                    {
-                        sum = 0;
-                    }
+                    indexJMinValue = temp;                    
                 }
-                else
+                if ((indexIMaxValue == indexIMinValue && indexJMaxValue - indexJMinValue == 1)
+                    || (indexIMaxValue - indexIMinValue == 1 && indexJMinValue == 3 && indexJMaxValue == 0))
                 {
+                    sum = 0;
+                }
+                else 
+                { 
                     for (int i = indexIMinValue; i <= indexIMaxValue; i++)
                     {
                         if (i == indexIMinValue && indexIMinValue == indexIMaxValue)
@@ -86,9 +86,7 @@
                                 sum += B[i, j];
                             }
                         }
-
-                    }                  
-
+                    }                    
                 }
                 Console.WriteLine($"Сумма между минимальным и максимальным элементами: {sum}");
             }
